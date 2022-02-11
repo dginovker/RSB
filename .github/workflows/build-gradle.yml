@@ -21,7 +21,14 @@ jobs:
     - name: Build with Gradle
       run: |
         ./gradlew build
+    - name: Rename bot jar
+      run: |
+        mv ./build/libs/RSBBB-1.0.jar ./OsrsBot.jar
     - uses: actions/upload-artifact@v2
       with:
         name: OsrsBot.jar
-        path: ./build/libs/RSBBB-1.0.jar
+        path: ./OsrsBot.jar
+    - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./OsrsBot.jar
