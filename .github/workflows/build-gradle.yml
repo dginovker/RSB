@@ -29,6 +29,6 @@ jobs:
         name: OsrsBot.jar
         path: ./OsrsBot.jar
     - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./OsrsBot.jar
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./OsrsBot.jar
